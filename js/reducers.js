@@ -35,7 +35,7 @@ var gameReducer = function (state, action) {
     } else {
       feedback = 'You got it!';
     }
-    var newState = Object.assign(state);
+    var newState = Object.assign({}, state);
     newState.guess = action.guess;
     newState.guessCount = state.guessCount + 1;
     newState.feedback = feedback;
