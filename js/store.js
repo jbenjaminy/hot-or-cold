@@ -1,7 +1,7 @@
 var redux = require('redux');
-var reducers = require('./reducers');
+var reducer = require('./reducers').reducer;
 
 var createStore = redux.createStore;
-var store = createStore(reducers.reducer);
+var store = createStore(reducer);
 
 module.exports  = store;
