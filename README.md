@@ -1,6 +1,6 @@
 # redux-hot-or-cold
 
-##### MONDAY
+## MONDAY
 
 Actions (instruction to update the state): 
 * making a new guess 
@@ -24,17 +24,16 @@ Render:
 * hot-or-cold string 
 * previous guesses string
 
-##### TUESDAY
+## TUESDAY
 
-// Stateless components
-	// Previous guess list -- like adding the new 'Card's in the trello app
-	// Feedback
-	// guess #
-// Stateful componenets
-	// new game (actions.newGame())
-		// generate random number, create new instances of the guess #, feedback, and previous guess lists (all empty)
-		// highest parent component 
-	// guess input/button (actions.makeGuess(event.target.value))
-		// update the feedback, guess #, previous guess list
-
-// actions.manageOverlay()
+* Stateless components
+  - Previous guess list -- like adding the new 'Card's in the trello app
+  - Feedback
+  - guess #
+* Stateful componenets
+  - new game (actions.newGame())
+  - generate random number, create new instances of the guess #, feedback, and previous guess lists (all empty)
+  - highest parent component 
+  - guess input/button (actions.makeGuess(event.target.value))
+  - update the feedback, guess #, previous guess list
+* actions.manageOverlay()
