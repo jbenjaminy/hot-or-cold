@@ -27,6 +27,7 @@ var GameContainer = React.createClass({
 					<NewGame restart={this.startNewGame}/>
 				</div>
 				<div className="game">
+				<h1 className="game-title">Hot | Cold</h1>
 					<Feedback text={this.props.game.feedback}/>
 					<GuessInput onInput={this.onSubmitGuess}/>
 					<GuessNumber text={this.props.game.previousGuesses.length}/>
