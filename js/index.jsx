@@ -15,4 +15,6 @@ console.log('state after makeGuess action: ', store.getState());
 store.dispatch(actions.makeGuess(store.getState().game.randomNum));
 console.log('state after makeGuess action: ', store.getState());
 
-	
+document.addEventListener('DOMContentLoaded', function () {
+  ReactDOM.render(<BoardContainer />, document.getElementById('app'));
+});
