@@ -4,7 +4,7 @@ var Overlay = function (props) {
   var classes = 'instructions' + (props.isVisible ? '' : ' hidden');
   return (
     <div>
-      <button onClick={props.onButtonClick()}>Instructions</button>
+      <button onClick={props.onButtonClick}>Instructions</button>
       <div className={classes}>
         <h3>What do I do?</h3>
         <p>This is a Hot or Cold Number Guessing Game. The game goes like this: </p>
@@ -14,7 +14,7 @@ var Overlay = function (props) {
           <li>3. You will <strong>get feedback</strong> on how close ("hot") or far ("cold") your guess is.</li>
         </ul>
         <p>So, Are you ready?</p>
-        <button onClick={props.onButtonClick()}>Got It!</button>
+        <button onClick={props.onButtonClick}>Got It!</button>
       </div> 
     </div>
   );

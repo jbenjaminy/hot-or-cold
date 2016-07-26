@@ -14,7 +14,6 @@ var GameContainer = React.createClass({
 		this.props.dispatch(actions.newGame());
 	},
 	toggleOverlay: function() {
-		console.log('inside toggleOverlay');
 		this.props.dispatch(actions.manageOverlay());
 	},
 	onInput: function(userInput) {
@@ -25,14 +24,9 @@ var GameContainer = React.createClass({
 			<div>
 				<div className="header">
 					<Overlay isVisible={this.props.overlay} onButtonClick={this.toggleOverlay}/>
-					<NewGame show={this.props.game}/>
+
 				</div>
-				<div className="game">
-					<Feedback text={this.props.game.feedback}/>
-					<GuessInput onImput={this.onInput(userInput)}/>
-					<GuessNumber text={this.props.game.previousGuesses.length}/>
-					<PreviousGuess array={this.props.game.previousGuesses}/>
-				</div>
+
 			</div>
 		);
 }
