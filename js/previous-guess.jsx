@@ -1,15 +1,11 @@
 var React = require('react');
 
-var PreviousGuesses = React.createClass({
-	render: function() {
+var PreviousGuesses = function (props) {
+	var list = props.array.map(
+		function(guess, index) {
+			return <li key={index}>{guess}</li>
+	});
 
-
-	}
-});
-
-var mapStateToProps = function(state, props) {
-	return {
-		
-	}
-}
-
+	return <ul>{list}</ul>
+};
+module.exports = PreviousGuesses;

@@ -29,8 +29,9 @@ var GameContainer = React.createClass({
 				<div className="game">
 					<Feedback text={this.props.game.feedback}/>
 					<GuessInput onInput={this.onSubmitGuess}/>
+					<GuessNumber text={this.props.game.previousGuesses.length}/>
+					<PreviousGuess array={this.props.game.previousGuesses}/>
 				</div>
-				
 			</div>
 		);
 }

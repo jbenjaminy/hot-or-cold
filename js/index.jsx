@@ -6,11 +6,9 @@ var actions = require('./actions');
 var store = require('./store');
 var GameContainer = require('./game-container')
 
-console.log('Get initial state: ', store.getState());
-
 document.addEventListener('DOMContentLoaded', function () {
 	store.dispatch(actions.newGame());
-	
+
   	ReactDOM.render(
     	<Provider store={store}>
       		<GameContainer />

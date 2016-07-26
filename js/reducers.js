@@ -13,7 +13,8 @@ var gameReducer = function(state, action) {
     return Object.assign({}, {
       randomNum: randomNum, 
       feedback: initialFeedback,
-      previousGuesses: initialGuessList});
+      previousGuesses: initialGuessList,
+    });
 
   } else if(action.type === actions.MAKE_GUESS) {
     var difference = Math.abs(action.guess - state.randomNum);
@@ -48,7 +49,7 @@ var gameReducer = function(state, action) {
 
     var newState = Object.assign({}, state);
     newState.feedback = feedback;
-    newState.previousGuesses = state.previousGuesses.concat(action.guess);
+    newState.previousGuesses = state.previousGuesses.concat(action.guess)
 
     return newState;
   } else {
