@@ -9,8 +9,10 @@ var GameContainer = require('./game-container')
 console.log('Get initial state: ', store.getState());
 
 document.addEventListener('DOMContentLoaded', function () {
-  ReactDOM.render(
-    <Provider store={store}>
-      <GameContainer />
-    </Provider>, document.getElementById('app'));
+	store.dispatch(actions.newGame());
+	
+  	ReactDOM.render(
+    	<Provider store={store}>
+      		<GameContainer />
+    	</Provider>, document.getElementById('app'));
 });
