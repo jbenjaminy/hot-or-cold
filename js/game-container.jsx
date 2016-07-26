@@ -1,6 +1,7 @@
 var React = require('react');
 var connect = require('react-redux').connect;
 
+var actions = require('./actions');
 var PreviousGuess = require('./previous-guess');
 var GuessNumber = require('./guess-number');
 var Feedback = require('./feedback');
@@ -11,20 +12,30 @@ var Overlay = require('./overlay');
 var GameContainer = React.createClass({
 	startNewGame: function() {
 		this.props.dispatch(actions.newGame());
-	}
+	},
+	toggleOverlay: function() {
+		console.log('inside toggleOverlay');
+		this.props.dispatch(actions.manageOverlay());
+	},
+	onInput: function(userInput) {
+		this.props.dispatch(actions.makeGuess(userInput));
+	},
 	render: function() {
 		return (
-		<div className="header">
-			<Overlay show={this.props.overlay}/>
-			<NewGame show={this.props.game}/>
-		</div>
-		<div className="game">
-			<Feedback />
-			<GuessInput />
-			<GuessNumber />
-			<PreviousGuess />
-		</div>
-	);
+			<div>
+				<div className="header">
+					<Overlay isVisible={this.props.overlay} onButtonClick={this.toggleOverlay}/>
+					<NewGame show={this.props.game}/>
+				</div>
+				<div className="game">
+					<Feedback text={this.props.game.feedback}/>
+					<GuessInput onImput={this.onInput(userInput)}/>
+					<GuessNumber text={this.props.game.previousGuesses.length}/>
+					<PreviousGuess array={this.props.game.previousGuesses}/>
+				</div>
+			</div>
+		);
+}
 });
 
 var mapStateToProps = function(state, props) {

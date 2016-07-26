@@ -1,20 +1,16 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Provider = require('react-redux').Provider;
+
 var actions = require('./actions');
 var store = require('./store');
+var GameContainer = require('./game-container')
 
 console.log('Get initial state: ', store.getState());
 
-store.dispatch(actions.newGame());
-console.log('state after newGame action: ', store.getState());
-
-store.dispatch(actions.makeGuess(14));
-console.log('state after makeGuess action: ', store.getState());
-
-store.dispatch(actions.makeGuess(50));
-console.log('state after makeGuess action: ', store.getState());
-
-store.dispatch(actions.makeGuess(store.getState().game.randomNum));
-console.log('state after makeGuess action: ', store.getState());
-
 document.addEventListener('DOMContentLoaded', function () {
-  ReactDOM.render(<BoardContainer />, document.getElementById('app'));
+  ReactDOM.render(
+    <Provider store={store}>
+      <GameContainer />
+    </Provider>, document.getElementById('app'));
 });
