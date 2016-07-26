@@ -16,8 +16,7 @@ var GameContainer = React.createClass({
 	toggleOverlay: function() {
 		this.props.dispatch(actions.manageOverlay());
 	},
-	onSubmitGuess: function(event, userInput) {
-		event.preventDefault();
+	onSubmitGuess: function(userInput) {
 		this.props.dispatch(actions.makeGuess(userInput));
 	},
 	render: function() {
@@ -29,7 +28,7 @@ var GameContainer = React.createClass({
 				</div>
 				<div className="game">
 					<Feedback text={this.props.game.feedback}/>
-					<GuessInput onImput={this.onSubmitGuess}/>
+					<GuessInput onInput={this.onSubmitGuess}/>
 				</div>
 				
 			</div>
