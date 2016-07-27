@@ -14,7 +14,7 @@ var result = renderer.getRenderOutput();
 var guessNumber = result;
 
 /*----------- TESTS -----------*/
-describe('GuessNumber', function() {
+describe('Guess-number', function() {
 	it('Renders a guess-number component with a text', function() {
 		guessNumber.type.should.equal('h3');
 		guessNumber.props.children.should.be.a('array');

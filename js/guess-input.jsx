@@ -23,4 +23,5 @@ var GuessInput = React.createClass({
 // Gives access to dispatch with no state.
 var Container = connect()(GuessInput);
 
-module.exports = Container;
+exports.GuessInput = GuessInput;
+exports.Container = Container;

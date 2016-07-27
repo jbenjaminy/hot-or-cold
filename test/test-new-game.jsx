@@ -13,7 +13,7 @@ renderer.render(<NewGame />);
 var newGame = renderer.getRenderOutput();
 
 /*----------- TESTS -----------*/
-describe('NewGame', function() {
+describe('New Game', function() {
   it('Renders a new game button', function() {
     newGame.type.should.equal('div');
     newGame.props.className.should.equal('header-buttons');

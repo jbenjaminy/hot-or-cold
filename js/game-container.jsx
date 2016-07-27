@@ -6,7 +6,7 @@ var PreviousGuess = require('./previous-guess');
 var GuessNumber = require('./guess-number');
 var Feedback = require('./feedback');
 var NewGame = require('./new-game');
-var GuessInput = require('./guess-input');
+var GuessInput = require('./guess-input').Container;
 var Overlay = require('./overlay');
 var Thermometer = require('./thermometer');
 

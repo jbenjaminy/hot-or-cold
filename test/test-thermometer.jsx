@@ -13,7 +13,7 @@ renderer.render(<Thermometer thermAmount={16}/>);
 var thermometer = renderer.getRenderOutput();
 
 /*----------- TESTS -----------*/
-describe('thermometer', function() {
+describe('Thermometer', function() {
   it('Renders the thermometer component with a given percentage', function() {
     thermometer.type.should.equal('div');
     thermometer.props.className.should.equal('thermometer');

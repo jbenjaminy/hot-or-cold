@@ -9,7 +9,7 @@ var PreviousGuess = require('../js/previous-guess');
 var renderer = TestUtils.createRenderer();
 
 /*----------- TESTS -----------*/
-describe('PreviousGuess', function() {
+describe('Previous Guesses', function() {
   it('Renders the previous guess component with an empty array', function() {
     renderer.render(<PreviousGuess array={[]}/>);
     var previousGuess = renderer.getRenderOutput();
