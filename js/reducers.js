@@ -10,19 +10,31 @@ var gameReducer = function(state, action) {
     var initialFeedback = 'Make your Guess';
     var initialGuessList = [];
     var initialThermAmount = 0;
+    var initialInputValue = '';
 
     return Object.assign({}, {
       randomNum: randomNum, 
       feedback: initialFeedback,
       previousGuesses: initialGuessList,
-      thermAmount: initialThermAmount
+      thermAmount: initialThermAmount,
+      inputValue: initialInputValue
     });
 
-
   } else if(action.type === actions.MAKE_GUESS) {
-    var difference = Math.abs(action.guess - state.randomNum);
+    var guess = parseInt(state.inputValue, 10);
+    if (isNaN(guess)) {
+      var feedback = 'Please enter a valid number';
+
+      newState = Object.assign({}, state);
+      newState.feedback = feedback;
+
+      return newState;
+    }
+
+    var difference = Math.abs(guess - state.randomNum);
     var feedback = '';
     var thermAmount = 0;
+    var inputValue = '';
     if (state.previousGuesses.length === 0) {
       if (difference >= 50) {
         feedback = 'You\'re Ice Cold...';
@@ -45,7 +57,7 @@ var gameReducer = function(state, action) {
       } else if (difference < prevDifference) {
         feedback = 'Getting Warmer!';
       } else {
-        feedback = 'No change';
+        feedback = 'No Change';
       }
     }
     if (difference >= 50) {
@@ -62,10 +74,18 @@ var gameReducer = function(state, action) {
 
     var newState = Object.assign({}, state);
     newState.feedback = feedback;
-    newState.previousGuesses = state.previousGuesses.concat(action.guess);
+    newState.previousGuesses = state.previousGuesses.concat(guess);
     newState.thermAmount = thermAmount;
+    newState.inputValue = inputValue;
 
     return newState;
+
+  } else if(action.type === actions.CHANGE_VALUE) {
+    var newState = Object.assign({}, state);
+    newState.inputValue = action.inputValue;
+
+    return newState;
+
   } else {
     return state;
   }

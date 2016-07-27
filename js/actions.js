@@ -7,10 +7,9 @@ var newGame = function() {
 };
 
 const MAKE_GUESS = 'MAKE_GUESS';
-var makeGuess = function(userGuess) {
+var makeGuess = function() {
   return {
-    type: MAKE_GUESS,
-    guess: userGuess
+    type: MAKE_GUESS
   };
 };
 
@@ -21,9 +20,19 @@ var manageOverlay = function() {
 	};
 };
 
+const CHANGE_VALUE = 'CHANGE_VALUE';
+var changeValue = function(inputValue) {
+  return {
+    type: CHANGE_VALUE,
+    inputValue: inputValue
+  };
+};
+
 exports.MANAGE_OVERLAY = MANAGE_OVERLAY;
 exports.manageOverlay = manageOverlay;
 exports.MAKE_GUESS = MAKE_GUESS;
 exports.makeGuess = makeGuess;
 exports.NEW_GAME = NEW_GAME;
 exports.newGame = newGame;
+exports.CHANGE_VALUE = CHANGE_VALUE;
+exports.changeValue = changeValue;

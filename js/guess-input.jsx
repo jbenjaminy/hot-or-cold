@@ -1,24 +1,26 @@
 var React = require('react');
+var connect = require('react-redux').connect;
+var actions = require('./actions');
 
 var GuessInput = React.createClass({
   onFormSubmit: function(event) {
     event.preventDefault();
-    if(this.refs.guessValue.value !== '') {
-      var number = parseInt(this.refs.guessValue.value, 10);
-      this.refs.guessValue.value = '';
-      this.props.onInput(number);
-    } else {
-      alert('Please enter a number between 1 and 100');
-    }
+    this.props.onInput();
+  },
+  onInputChanged: function(event) {
+    this.props.dispatch(actions.changeValue(event.target.value));
   },
 	render: function() {
 	return (
 		<form onSubmit={this.onFormSubmit}>
-			<input type="number" placeholder="Guess a number between 1-100" ref="guessValue"/>
+			<input type="number" placeholder="Guess a number between 1-100" ref="guessValue" value={this.props.inputValue} onChange={this.onInputChanged}/>
 			<button type="submit">Make Guess</button>
 		</form>
 	);
 	}
 });
 
-module.exports = GuessInput;
+// Gives access to dispatch with no state.
+var Container = connect()(GuessInput);
+
+module.exports = Container;

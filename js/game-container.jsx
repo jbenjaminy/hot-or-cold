@@ -17,8 +17,8 @@ var GameContainer = React.createClass({
 	toggleOverlay: function() {
 		this.props.dispatch(actions.manageOverlay());
 	},
-	onSubmitGuess: function(userInput) {
-		this.props.dispatch(actions.makeGuess(userInput));
+	onSubmitGuess: function() {
+		this.props.dispatch(actions.makeGuess());
 	},
 	render: function() {
 		return (
@@ -34,7 +34,7 @@ var GameContainer = React.createClass({
 						<div className="game">
 							<h1 className="game-title">Hot | Cold</h1>
 							<Feedback text={this.props.game.feedback}/>
-							<GuessInput onInput={this.onSubmitGuess}/>
+							<GuessInput onInput={this.onSubmitGuess} inputValue={this.props.game.inputValue}/>
 							<GuessNumber text={this.props.game.previousGuesses.length}/>
 							<PreviousGuess array={this.props.game.previousGuesses}/>
 						</div>
