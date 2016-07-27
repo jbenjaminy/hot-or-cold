@@ -3,6 +3,7 @@ body {
   font-size: 16px;
   font-family: Nunito, 'Sans-serif';
   background-color: #001f3f;
+  color: #001f3f;
 }
 
 .header {
@@ -40,7 +41,32 @@ body{
   width: 100%;
   height: 100%;
   z-index: 10;
-  background-color: green;
+  background-color: #FF4136;
+  padding: 5%;
+}
+
+.instructions ul {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #FF4136;
+  padding: 2%;
+}
+
+.instructions li {
+  text-align: left;
+  display: block;
+  text-decoration: none;
+  background-color: #FF4136;
+}
+.instructions p {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.instructions h3 {
+  font-size: 1.5rem;
+  padding-bottom: 2%;
 }
 
 .hidden {
@@ -60,14 +86,18 @@ body{
 }
 
 .game {
+  font-family: Nunito, 'Sans-serif';
   background-color: #0074D9;
   padding: 1rem;
   border-radius: 10px;
-  /*display: block;*/
   margin: 2rem auto;
   width: 50%;
   text-align: center;
   vertical-align: center;
+}
+
+.game ul {
+  padding-top: 2%;
 }
 
 input {
@@ -86,6 +116,7 @@ input {
   background-color: #0074D9;
   font-size: 1.5rem;
   color: #001f3f;
+  padding-bottom: 2%;
 }
 
 button {
@@ -93,9 +124,11 @@ button {
   margin: 0 auto;
   margin-bottom: 1rem;
   background-color: #7FDBFF;
-  border-radius: 10px;
-  border: 2px solid #7FDBFF;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
 	font-family: Nunito, 'Sans-serif';
+  color: #001f3f;
 }
 
 ul {
@@ -131,8 +164,12 @@ ul li {
   width: 20px;
 }
 
+.feedback {
+  color: #FF851B;
+}
+
 .amount {
-  background: #f34e54;
+  background: #FF4136;
   border-radius: 100px;
   display: block;
   width: 20px;
@@ -171,7 +208,7 @@ ul li {
 }
 
 .red-circle {
-  background: #f34e54;
+  background: #FF4136;
   border-radius: 100px;
   display: block;
   height: 50px;
@@ -179,7 +216,7 @@ ul li {
 }
 
 .filler {
-  background: #f34e54;
+  background: #FF4136;
   border-radius: 100px 100px 0 0;
   display: block;
   height: 30px;
