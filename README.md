@@ -6,7 +6,7 @@ The classic guessing game implimented using React and Redux. Here's how it works
   2. The user enters guesses until they find the hidden number.</li>
   3. For each guess the user will be presented with feedback indicating how close their guess is from the hidden number.
 
-## Installation
+## Installations
 
 The code uses npm to manage dependencies. Make sure you have the latest version of node installed. 
 
