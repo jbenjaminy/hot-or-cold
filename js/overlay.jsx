@@ -5,7 +5,7 @@ var Overlay = function (props) {
   var instructionsButton = (!props.isVisible ? '' : 'hidden');
   return (
     <div className="header-buttons">
-        <button onClick={props.onButtonClick} className={instructionsButton}>Instructions</button>
+      <button onClick={props.onButtonClick} className={instructionsButton}>Instructions</button>
       <div className={classes}>
         <h3>What do I do?</h3>
         <p>This is a Hot or Cold Number Guessing Game. The game goes like this: </p>
