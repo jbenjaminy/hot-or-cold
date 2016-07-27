@@ -13,5 +13,5 @@ The code uses npm to manage dependencies. Make sure you have the latest version 
 1. Run `npm install` to set up the package
 2. Since the package relies on webpack, you will also need to run `npm run build` before accessing the game
 3. You will need to use a local server in order to access the game. Feel free to use your own local server or type  `npm run serve` at the command line. The package comes with [http-server](https://www.npmjs.com/package/http-server) already set as a dev dependency. 
-4. If you choose to use the [http-server](https://www.npmjs.com/package/http-server) via the `npm run serve` command, you can access the game at [](http://localhost:8080) 
+4. If you choose to use the [http-server](https://www.npmjs.com/package/http-server) via the `npm run serve` command, you can access the game at [http://localhost:8080](http://localhost:8080) 
 
