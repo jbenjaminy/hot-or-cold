@@ -9,47 +9,61 @@ var gameReducer = function(state, action) {
     var randomNum = Math.floor((Math.random() * 100) + 1);
     var initialFeedback = 'Make your Guess';
     var initialGuessList = [];
+    var initialThermAmount = 0;
 
     return Object.assign({}, {
       randomNum: randomNum, 
       feedback: initialFeedback,
       previousGuesses: initialGuessList,
+      thermAmount: initialThermAmount
     });
+
 
   } else if(action.type === actions.MAKE_GUESS) {
     var difference = Math.abs(action.guess - state.randomNum);
     var feedback = '';
-    console.log(difference, 'difference');
+    var thermAmount = 0;
     if (state.previousGuesses.length === 0) {
       if (difference >= 50) {
-        feedback = 'Ice Cold!';
+        feedback = 'You\'re Ice Cold...';
       } else if (difference >= 30) {
-        feedback = 'Cold';
+        feedback = 'You\'re Cold...';
       } else if (difference >= 10) {
-        feedback = 'Warm';
+        feedback = 'You\'re Warm';
       } else if (difference >= 1) {
-        feedback = 'Very HOT!';
+        feedback = 'You\'re Hot!';
       } else {
         feedback = 'You got it!';
       }
     } else {
       var prevGuess = state.previousGuesses[state.previousGuesses.length - 1];
       var prevDifference = Math.abs(prevGuess - state.randomNum);
-      console.log(prevDifference, 'prevDifference');
       if (difference === 0) {
         feedback = 'You got it!';
       } else if (difference > prevDifference) {
-        feedback = 'Colder';
+        feedback = 'Getting Colder...';
       } else if (difference < prevDifference) {
-        feedback = 'Warmer';
+        feedback = 'Getting Warmer!';
       } else {
         feedback = 'No change';
       }
     }
+    if (difference >= 50) {
+      thermAmount = 16;
+    } else if (difference >= 30) {
+      thermAmount = 36;
+    } else if (difference >= 10) {
+      thermAmount = 56;
+    } else if (difference >= 1) {
+      thermAmount = 76;
+    } else {
+      thermAmount = 96;
+    }
 
     var newState = Object.assign({}, state);
     newState.feedback = feedback;
-    newState.previousGuesses = state.previousGuesses.concat(action.guess)
+    newState.previousGuesses = state.previousGuesses.concat(action.guess);
+    newState.thermAmount = thermAmount;
 
     return newState;
   } else {

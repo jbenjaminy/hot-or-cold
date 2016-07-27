@@ -5,18 +5,34 @@ body {
   background-color: #001f3f;
 }
 
+.header {
+  width: 75%;
+  text-align: center;
+}
+
+.header-column {
+  width: 40%;
+  text-align: center;
+}
+
+.header-buttons {
+  display: inline-block;
+}
+
 .header>div, .header button {
-	display: inline-block;
+  display: inline-block;
 	margin: 0.5rem 1rem;
 }
 
 html, body{
   height: 100%;
 }
+
 body{
   position: relative;
   min-height: 100%;
 }
+
 .instructions{
   position: absolute;
   top: 0;
@@ -31,20 +47,33 @@ body{
   display: none;
 }
 
+.main {
+  display: inline-block;
+  width: 100%;
+}
+
+.game-column {
+  width: 75%;
+  height: 320px;
+  vertical-align: top;
+  display: inline-block;
+}
+
 .game {
   background-color: #0074D9;
   padding: 1rem;
   border-radius: 10px;
-  display: block;
+  /*display: block;*/
   margin: 2rem auto;
-  width: 30%;
+  width: 50%;
   text-align: center;
+  vertical-align: center;
 }
 
 input {
   width: 50%;
   padding: 0.25rem;
-  font-size: 1rem;
+  font-size: .75rem;
   margin: 1rem;
   background-color: #F2F5EC;
   border-radius: 10px;
@@ -79,4 +108,158 @@ ul li {
   margin: 0.25rem;
 	background-color: #001f3f;
 	color: #ffffff;
+}
+
+.therm-column {
+  width: 25%;
+  display: inline-block;
+}
+
+.thermometer {
+  margin-left: 30px;
+  width: 100px;
+}
+
+.glass {
+  background: #e5e5e5;
+  border-radius: 100px 100px 0 0;
+  display: block;
+  height: 300px;
+  margin: 0 35px 10px;
+  padding: 5px;
+  position: relative;
+  width: 20px;
+}
+
+.amount {
+  background: #f34e54;
+  border-radius: 100px;
+  display: block;
+  width: 20px;
+  position: absolute;
+  bottom: 5px;
+}
+
+.thermometer strong { 
+  display: block; 
+  text-align: right; 
+}
+
+.goal {
+  font-size: 30px;
+}
+
+.win, .hot, .warm, .cold, .icecold {
+  width: 80px;
+  font-family: Nunito, 'Sans-serif';
+  font-size: 16px;
+  position: absolute;
+  right: 35px;
+}
+
+.bulb {
+  background: #e5e5e5;
+  border-radius: 100px;
+  display: block;
+  height: 50px;
+  margin: 0 35px 10px;
+  padding: 5px;
+  position: relative;
+  top: -20px;
+  right: 15px;
+  width: 50px;
+}
+
+.red-circle {
+  background: #f34e54;
+  border-radius: 100px;
+  display: block;
+  height: 50px;
+  width: 50px;
+}
+
+.filler {
+  background: #f34e54;
+  border-radius: 100px 100px 0 0;
+  display: block;
+  height: 30px;
+  width: 20px;
+  position: relative;
+  top: -65px;
+  right: -15px;
+  z-index: 30;
+}
+
+.icecold {
+  bottom: 15%;
+  color: #7FDBFF;
+}
+
+.cold {
+  bottom: 35%;
+  color: #0074D9;
+}
+
+.warm {
+  bottom: 55%;
+  color: #FF851B;
+}
+
+.hot {
+  bottom: 75%;
+  color: #FF4136;
+}
+
+.win {
+  bottom: 95%;
+  color: #2ECC40;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
