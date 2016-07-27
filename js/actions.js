@@ -1,4 +1,8 @@
 /* ------- ACTIONS --------- */
+
+/**
+  * Action to make a new game
+ */
 const NEW_GAME = 'NEW_GAME';
 var newGame = function() {
   return {
@@ -6,6 +10,9 @@ var newGame = function() {
   };
 };
 
+/**
+  * Action to make a new guess
+ */
 const MAKE_GUESS = 'MAKE_GUESS';
 var makeGuess = function() {
   return {
@@ -13,6 +20,9 @@ var makeGuess = function() {
   };
 };
 
+/**
+  * Action to view instructions overlay
+ */
 const MANAGE_OVERLAY = 'MANAGE_OVERLAY';
 var manageOverlay = function() {
 	return {
@@ -20,6 +30,11 @@ var manageOverlay = function() {
 	};
 };
 
+/**
+ * Action to update user's input value
+ * @inputValue - parameter representing the user's input value, 
+ * passed to the reducer to be stored as state
+ */
 const CHANGE_VALUE = 'CHANGE_VALUE';
 var changeValue = function(inputValue) {
   return {
@@ -28,6 +43,7 @@ var changeValue = function(inputValue) {
   };
 };
 
+/*------- EXPORTS -------*/
 exports.MANAGE_OVERLAY = MANAGE_OVERLAY;
 exports.manageOverlay = manageOverlay;
 exports.MAKE_GUESS = MAKE_GUESS;

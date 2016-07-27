@@ -15,7 +15,7 @@ var GameContainer = React.createClass({
 	/**
 	 * Dispatches an action to the Redux store that will reset
 	 * the state to its initial values.
- */
+ 	*/
 	startNewGame: function() {
 		this.props.dispatch(actions.newGame());
 	},
