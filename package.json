@@ -18,7 +18,8 @@
     "clean:css": "rm -f build/style.css",
     "build:js": "npm run clean:js && webpack",
     "watch:js": "npm run build:js && webpack --watch",
-    "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map"
+    "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map",
+    "heroku-postbuild": "npm run build"
   },
   "babel": {
     "presets": [
@@ -35,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/jbenjaminy/hot-or-cold/issues"
   },
-  "homepage": "https://jbenjaminy.github.io/redux-hot-or-cold/",
+  "homepage": "hot-or-cold.jbenjaminy.com",
   "devDependencies": {
     "babel-core": "^6.11.4",
     "babel-loader": "^6.2.4",
